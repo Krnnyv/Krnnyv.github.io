@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Valentine 💘</title>
+    <style>
+        body {
+            font-family: Cambria, serif;
+            background-color: #ffe6f0;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: #d63384;
+        }
+
+        #catGif, #bearsGif {
+            width: 250px;
+            margin: 20px 0;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        button {
+            font-family: Cambria, serif;
+            font-size: 20px;
+            padding: 12px 25px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #yesBtn {
+            background-color: #ff4d88;
+            color: white;
+            transition: transform 0.2s;
+        }
+
+        #noBtn {
+            background-color: #cccccc;
+        }
+
+        #loveMessage {
+            display: none;
+            font-size: 42px;
+            color: #d63384;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="question">Will you be my Valentine? 💌</h1>
+
+    <!-- GIF z kotkiem -->
+    <img id="catGif" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="cute cat">
+
+    <div class="buttons" id="buttons">
+        <button id="yesBtn">Yes 💖</button>
+        <button id="noBtn">No 💔</button>
+    </div>
+
+    <!-- Napis + misie -->
+    <div id="loveMessage">
+        Kocham cię słoneczko 💕
+        <br><br>
+        <img id="bearsGif" src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="kissing bears">
+    </div>
+
+    <script>
+        let scale = 1;
+        const yesBtn = document.getElementById("yesBtn");
+        const noBtn = document.getElementById("noBtn");
+
+        const question = document.getElementById("question");
+        const buttons = document.getElementById("buttons");
+        const catGif = document.getElementById("catGif");
+        const loveMessage = document.getElementById("loveMessage");
+
+        noBtn.addEventListener("click", () => {
+            scale += 0.2;
+            yesBtn.style.transform = `scale(${scale})`;
+        });
+
+        yesBtn.addEventListener("click", () => {
+            question.style.display = "none";
+            buttons.style.display = "none";
+            catGif.style.display = "none";
+            loveMessage.style.display = "block";
+        });
+    </script>
+
+</body>
+</html>
